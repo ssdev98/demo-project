@@ -1,11 +1,14 @@
+name: example1 
+
 on:
-  push:
+  push: # or pull_request: 
     branches:
       - main
 
 jobs:
-  first-job:
-    runs-on: windows-latest
+  first-job: # job name can be anything
+    runs-on: ubuntu-latest #or windows-latest
+
     steps:
       - run: node --version
       - run: npm --version
