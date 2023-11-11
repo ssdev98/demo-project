@@ -1,9 +1,10 @@
 name: example1 
 
 on:
-  push: # or pull_request: 
-    branches:
-      - main
+  push:
+    branches: [main]
+  #pull_request: 
+    #branches: [develop]  
 
 jobs:
   first-job: # job name can be anything
