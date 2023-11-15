@@ -1,13 +1,16 @@
-name: example1 
+# https://www.youtube.com/watch?v=mah8PV6ugNY&list=TLPQMTExMTIwMjNEyF5vqgReZg&index=8
+name: example1 # name can be anything
 
 on:
   push:
     branches: [main]
-  #pull_request: 
-    #branches: [develop]  
+  pull_request:
+    branches: '*' #all branches
+  #pull_request:
+    #branches: [develop] # or main
 
 jobs:
-  first-job: # job name can be anything
+  first-job: # job name can be anything test, build, deploy, release, etc
     runs-on: ubuntu-latest #or windows-latest
 
     steps:
