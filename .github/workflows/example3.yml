@@ -12,4 +12,4 @@ jobs:
 
     steps:
       - name: Read README.md file
-        run: bash $g{GITHUB_WORKSPACE}/scripts/script1.sh arg1 arg2
+        run: bash ${GITHUB_WORKSPACE}/scripts/script1.sh arg1 arg2
