@@ -29,14 +29,16 @@ jobs:
     runs-on: ubuntu-latest #or windows-latest
 
     steps:
-      - uses: actions/checkout@v4 # https://github.com/actions/checkout
+      - name: Checkout Repository
+        uses: actions/checkout@v4 # https://github.com/actions/checkout
         with:
           #To fetch files under src
           sparse-checkout: |
             src
-      - run: |
+      - name: Print file content
+        run: |
           cd src
-          cat message.ts
+          cat src/message.ts
 
   benchmark-test:
     name: my benchmark tests
