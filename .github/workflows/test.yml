@@ -19,8 +19,10 @@ jobs:
     runs-on: ubuntu-latest #or windows-latest
 
     steps:
-      - uses: actions/checkout@v4 #https://github.com/actions/checkout
-      - run: cat '/home/soufiane/Desktop/demo-project/README.md'
+      - uses: actions/checkout@v4 # https://github.com/actions/checkout
+        with:
+          sparse-checkout: . # To fetch root files
+      - run: cat README.md
 
   integration-test:
     name: my integration tests
