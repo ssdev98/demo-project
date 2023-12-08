@@ -16,5 +16,5 @@ jobs:
         with:
           sparse-checkout: scripts
 
-      - name: Read README.md file
-        run: bash ${GITHUB_WORKSPACE}/scripts/script1.sh arg1 arg2
+      - name: Run bash script 
+        run: bash script1.sh arg1 arg2
