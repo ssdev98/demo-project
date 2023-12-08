@@ -31,8 +31,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4 # https://github.com/actions/checkout
         with:
-          sparse-checkout: src # To fetch root files
-      - run: cat message.ts
+          #To fetch files under src
+          sparse-checkout: |
+            src
+      - run: |
+          cd src
+          cat message.ts
 
   benchmark-test:
     name: my benchmark tests
