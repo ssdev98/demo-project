@@ -1,0 +1,15 @@
+name: Example1
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  demo-1-bash:
+    name: my demo1
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Read README.md file
+        run: bash $g{GITHUB_WORKSPACE}/scripts/script1.sh arg1 arg2
