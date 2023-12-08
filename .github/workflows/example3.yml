@@ -1,4 +1,4 @@
-name: Example1
+name: Example3
 
 on:
   push:
@@ -11,5 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: scripts
+
       - name: Read README.md file
         run: bash ${GITHUB_WORKSPACE}/scripts/script1.sh arg1 arg2
