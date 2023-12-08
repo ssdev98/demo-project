@@ -47,3 +47,15 @@ jobs:
 
     steps:
       - run: echo Hello, benchmark-test!
+
+  another-test1:
+    name: my another test1
+    runs-on: ubuntu-latest #or windows-latest
+
+    steps:
+      - uses: actions/checkout@v4 # https://github.com/actions/checkout
+        with:
+          # Checkout to different branch
+          ref: another-branch
+          sparse-checkout: . # To fetch root files
+      - run: cat README.md # Print content of the file
