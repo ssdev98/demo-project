@@ -1,0 +1,37 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  #pull_request:
+  #branches: '*' #all branches
+  #pull_request:
+  #branches: [develop] # develop or main etc
+
+permissions: read-all
+
+jobs:
+  unit-test: # job name can be anything test, build, deploy, release, etc
+    name: my unit tests
+
+    runs-on: ubuntu-latest #or windows-latest
+
+    steps:
+      - uses: actions/checkout@v4 #https://github.com/actions/checkout
+      - run: cat '/home/soufiane/Desktop/demo-project/README.md'
+
+  integration-test:
+    name: my integration tests
+    runs-on: ubuntu-latest #or windows-latest
+
+    steps:
+      - run: echo Hello, integration-test!
+
+  benchmark-test:
+    name: my benchmark tests
+    runs-on: ubuntu-latest #or windows-latest
+
+    steps:
+      - run: echo Hello, benchmark-test!
