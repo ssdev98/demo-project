@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          sparse-checkout: scripts
 
       - name: Run bash script 
-        run: bash script1.sh arg1 arg2
+        run: bash ${GITHUB_WORKSPACE}/scripts/script1.sh arg1 arg2
