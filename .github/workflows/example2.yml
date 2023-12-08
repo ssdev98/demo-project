@@ -1,0 +1,58 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  demo-1:
+    name: my demo1
+
+    runs-on: ubuntu-latest #or windows-latest
+
+    steps:
+      - uses: actions/checkout@v4 # https://github.com/actions/checkout
+        with:
+          # To fetch root files
+          sparse-checkout: .
+      - name: Read README.md file
+        run: cat README.md # Print content of the file
+
+  demo-2:
+    name: my demo1
+    runs-on: ubuntu-latest #or windows-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          # To fetch files under src
+          # Pipe(|) allow us to write and run multiple commands
+          sparse-checkout: |
+            src
+
+      - name: Print file content
+        run: |
+          cd src
+          cat message.ts
+
+  demo-3:
+    name: my demo3
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display a message
+        run: echo Hello, benchmark-test!
+
+  demo-4:
+    name: my demo4
+    runs-on: ubuntu-latest #or windows-latest
+
+    steps:
+      - uses: actions/checkout@v4 # https://github.com/actions/checkout
+        with:
+          # Checkout to different branch other than main in this case
+          ref: another-branch
+          sparse-checkout: . # To fetch root files
+      - name: Read README.md file
+        run: cat README.md # Print content of the file

@@ -29,33 +29,27 @@ jobs:
     runs-on: ubuntu-latest #or windows-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-        with:
-          #To fetch files under src
-          sparse-checkout: |
-            src
-
-      - name: Print file content
+      - name: Some command
         run: |
-          cd src
-          cat message.ts
+          echo line1
+          echo line2
 
   benchmark-test:
     name: my benchmark tests
     runs-on: ubuntu-latest #or windows-latest
 
     steps:
-      - run: echo Hello, benchmark-test!
+      - name: Some command
+        run: |
+          echo line1
+          echo line2
 
   another-test1:
     name: my another test1
     runs-on: ubuntu-latest #or windows-latest
 
     steps:
-      - uses: actions/checkout@v4 # https://github.com/actions/checkout
-        with:
-          # Checkout to different branch
-          ref: another-branch
-          sparse-checkout: . # To fetch root files
-      - run: cat README.md # Print content of the file
+      - name: Some command
+        run: |
+          echo line1
+          echo line2
