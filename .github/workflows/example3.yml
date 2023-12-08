@@ -14,5 +14,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Run bash script 
-        run: bash ${GITHUB_WORKSPACE}/scripts/script1.sh arg1 arg2
+      - name: Run bash script
+        run: echo ${GITHUB_WORKSPACE} |
+          bash ${GITHUB_WORKSPACE}/scripts/script1.sh arg1 arg2
