@@ -30,15 +30,16 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4 # https://github.com/actions/checkout
+        uses: actions/checkout@v4
         with:
           #To fetch files under src
           sparse-checkout: |
             src
+
       - name: Print file content
         run: |
           cd src
-          cat src/message.ts
+          cat message.ts
 
   benchmark-test:
     name: my benchmark tests
