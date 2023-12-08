@@ -1,4 +1,4 @@
-name: Tests
+name: Example2
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
         run: cat README.md # Print content of the file
 
   demo-2:
-    name: my demo1
+    name: my demo2
     runs-on: ubuntu-latest #or windows-latest
 
     steps:
@@ -42,7 +42,7 @@ jobs:
 
     steps:
       - name: Display a message
-        run: echo Hello, benchmark-test!
+        run: echo Hello, World!
 
   demo-4:
     name: my demo4
