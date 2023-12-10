@@ -1,0 +1,26 @@
+# https://github.com/actions/checkout
+name: Example5
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: '*' #all branches
+
+jobs:
+  my-job1:
+    name: my demo1
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        # Note this commit is not signed/verified
+        # https://github.com/nautilus-cyberneering/pygithub/blob/main/docs/how_to_sign_automatic_commits_in_github_actions.md
+      - run: |
+          echo 'Hello, World!' > generated_message.txt
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "feat: add generated_message.txt"
+          git push

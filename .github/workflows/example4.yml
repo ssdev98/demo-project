@@ -1,0 +1,28 @@
+name: Example4
+
+on:
+  # To support manual triggering for this workflow
+  workflow_dispatch: {}
+  # To schedule a job
+  # Can be used for example for backup purpuses
+  # Can be used to deploy nightly builds
+  schedule:
+    - cron: '0 0 * * 0' # https://crontab.guru/
+
+  #defaults:
+  #run:
+  #working-directory: ./scripts/
+
+jobs:
+  backup:
+    name: Do something
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run backup bash script
+        # or bash ./scripts/backup.sh
+        run: bash ${GITHUB_WORKSPACE}/scripts/backup.sh

@@ -4,6 +4,14 @@ on:
   push:
     branches: [main]
 
+  #workflow_dispatch: {}
+  #schedule:
+  #- cron: '0 0 * * 0' # https://crontab.guru/
+
+  #defaults:
+  #run:
+  #working-directory: ./scripts/
+
 jobs:
   demo-1-bash:
     name: my demo1
@@ -15,5 +23,5 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run bash script
-        run: echo ${GITHUB_WORKSPACE} |
-          bash ${GITHUB_WORKSPACE}/scripts/script1.sh arg1 arg2
+        # or bash ./scripts/script1.sh arg1 arg2
+        run: bash ${GITHUB_WORKSPACE}/scripts/script1.sh arg1 arg2

@@ -1,0 +1,17 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: '*' #all branches
+  #pull_request:
+  #branches: [develop] # develop or main etc
+
+permissions: read-all
+
+jobs:
+  build: # This is job name
+    name: Build application
+    runs-on: ubuntu-latest #or macos-latest
+

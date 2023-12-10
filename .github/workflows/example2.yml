@@ -4,13 +4,18 @@ on:
   push:
     branches: [main]
 
+#defaults:
+#run:
+#working-directory: ./src/
+
 jobs:
   demo-1:
     name: my demo1
 
-    runs-on: ubuntu-latest #or windows-latest
+    runs-on: ubuntu-latest #or windows-latest or multipe os ${{ matrix.os}}
 
     steps:
+      # actions/checkout@v4 is used to bring the code to the container so we can play with it
       - uses: actions/checkout@v4 # https://github.com/actions/checkout
         with:
           # To fetch root files
@@ -20,6 +25,7 @@ jobs:
 
   demo-2:
     name: my demo2
+
     runs-on: ubuntu-latest #or windows-latest
 
     steps:
@@ -38,6 +44,7 @@ jobs:
 
   demo-3:
     name: my demo3
+
     runs-on: ubuntu-latest
 
     steps:
@@ -56,3 +63,18 @@ jobs:
           sparse-checkout: . # To fetch root files
       - name: Read README.md file
         run: cat README.md # Print content of the file
+
+  demo-5:
+    name: using env and secrets
+    runs-on: ubuntu-latest #or windows-latest
+
+    env:
+      MY_TOKEN1: ${{ secrets.MY_TOKEN1 }}
+
+    steps:
+      - uses: actions/checkout@v4 # https://github.com/actions/checkout
+
+      - name: Print secret
+        run: |
+          echo "My secret value is $MY_TOKEN1"
+          echo "My secret value is ${{ secrets.MY_TOKEN1 }}"

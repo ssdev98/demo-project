@@ -1,0 +1,21 @@
+name: Example7
+
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+
+jobs:
+  build:
+    name: some title here
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: My Step 1
+        id: MyStep1
+        run: echo "success"
+
+      - name: My Step 2
+        if: steps.MyStep1.outputs.result == 'success'
+        run: echo "My Step 2 executed!"
