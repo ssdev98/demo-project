@@ -21,7 +21,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: My-Artifact-Name #TODO: Artifact name here
-          path: build/artifact.apk #TODO: Path of the artifact
+          #path: build/artifact.apk #TODO: Path of the artifact
 
       - name: Display the structure of downloaded artifacts/files
         run: ls -R
