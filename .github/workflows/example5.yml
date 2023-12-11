@@ -15,6 +15,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        # Make sure to update workflow permissions in actions settings
         # Note this commit is not signed/verified
         # https://github.com/nautilus-cyberneering/pygithub/blob/main/docs/how_to_sign_automatic_commits_in_github_actions.md
       - run: |

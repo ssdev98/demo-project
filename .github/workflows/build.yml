@@ -15,3 +15,6 @@ jobs:
     name: Build application
     runs-on: ubuntu-latest #or macos-latest
 
+    steps:
+      - run: node --version
+      - run: npm --version

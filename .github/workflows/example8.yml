@@ -1,0 +1,28 @@
+name: Example8
+
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+
+jobs:
+  build:
+    name: some title here #TODO: Change title
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Create a directory
+        run: mkdir build
+
+      - name: Build project
+        run: echo 'Hello, World! This is an artifact!!!' > build/artifact.apk #TODO: Build command here
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: My-Artifact-Name #TODO: Artifact name here
+          path: build/artifact.apk #TODO: Path of the artifact
