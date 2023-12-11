@@ -24,4 +24,4 @@ jobs:
           path: build/artifact.apk #TODO: Path of the artifact
 
       - name: Display the structure of downloaded artifacts/files
-        uses: ls -R
+        run: ls -R
