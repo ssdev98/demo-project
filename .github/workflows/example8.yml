@@ -3,11 +3,15 @@ name: Example8
 on:
   push:
     branches: main
+    #paths:
+    #- 'src/**'
   pull_request:
     branches: main
+    #paths:
+    #- 'src/**'
 
 jobs:
-  build:
+  job1:
     name: some title here #TODO: Change title
     runs-on: ubuntu-latest
 
@@ -24,5 +28,24 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: My-Artifact-Name #TODO: Artifact name here
+          name: my-artifact-name #TODO: Artifact name here
           path: build/artifact.apk #TODO: Path of the artifact
+
+  job2:
+    name: some title here #TODO: Change title
+    runs-on: ubuntu-latest
+    needs: job1
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: my-artifact-name #TODO: Artifact name here
+          path: build
+
+      - name: Display the structure of downloaded artifacts/files
+        run: ls -R
+        working-directory: build

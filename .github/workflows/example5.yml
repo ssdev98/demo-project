@@ -4,8 +4,12 @@ name: Example5
 on:
   push:
     branches: [main]
+    paths: 
+      - 'src/**'
   pull_request:
     branches: '*' #all branches
+    paths: 
+      - 'src/**'
 
 jobs:
   my-job1:

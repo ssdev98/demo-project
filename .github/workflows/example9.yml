@@ -1,6 +1,7 @@
 name: Example9
 
 on:
+  
   # This workflow will run after Example8 completed
   # https://chat.openai.com/c/9f40bf08-22e3-4822-8f05-fe4350946c2f
   workflow_run:
@@ -10,7 +11,7 @@ on:
       - completed
 
 jobs:
-  build:
+  hello:
     name: some title here #TODO: Change title
     runs-on: ubuntu-latest
 
@@ -19,11 +20,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Download artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: My-Artifact-Name #TODO: Artifact name here
-          path: build
-
-      - name: Display the structure of downloaded artifacts/files
-        run: ls -R
-        working-directory: build
+        run: echo 'Hello, World!'

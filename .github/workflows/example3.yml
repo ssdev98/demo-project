@@ -3,14 +3,16 @@ name: Example3
 on:
   push:
     branches: [main]
+    paths: 
+      - 'src/**'
 
   #workflow_dispatch: {}
   #schedule:
-  #- cron: '0 0 * * 0' # https://crontab.guru/
+    #- cron: '0 0 * * 0' # https://crontab.guru/
 
   #defaults:
-  #run:
-  #working-directory: ./scripts/
+    #run:
+    #working-directory: ./scripts/
 
 jobs:
   demo-1-bash:

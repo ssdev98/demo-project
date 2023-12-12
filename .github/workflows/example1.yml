@@ -3,11 +3,14 @@ name: example1 # name can be anything
 
 on:
   push:
-    branches: [main]
+    branches: 
+      - main
+    paths: 
+      - 'src/**' # ** means wildcard to match child folders or files
   pull_request:
-    branches: '*' #all branches
-  #pull_request:
-    #branches: [develop] # or main
+    branches: '*' #all branches or [develop] # or main
+    paths: 
+      - 'src/**'
 
 jobs:
   first-job: # job name can be anything test, build, deploy, release, etc

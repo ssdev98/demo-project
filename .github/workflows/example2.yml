@@ -3,10 +3,12 @@ name: Example2
 on:
   push:
     branches: [main]
+    paths: 
+      - 'src/**'
 
-#defaults:
-#run:
-#working-directory: ./src/
+  #defaults:
+    #run:
+      #working-directory: ./src/
 
 jobs:
   demo-1:

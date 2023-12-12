@@ -3,8 +3,12 @@ name: Example6
 on:
   push:
     branches: main
+    paths:
+      - 'src/**'
   pull_request:
     branches: main
+    paths:
+      - 'src/**'
 
 jobs:
   build:
@@ -19,7 +23,7 @@ jobs:
     name: This is deploy job
     runs-on: ubuntu-latest
     # This is a condition
-    needs: build 
+    needs: build
 
     steps:
       - name: Print message2

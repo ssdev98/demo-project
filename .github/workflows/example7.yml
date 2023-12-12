@@ -2,9 +2,16 @@ name: Example7
 
 on:
   push:
-    branches: main
+    branches:
+      - main
+    paths:
+      - 'src/**'
+
   pull_request:
-    branches: main
+    branches:
+      - main
+    paths:
+      - 'src/**'
 
 jobs:
   build:
