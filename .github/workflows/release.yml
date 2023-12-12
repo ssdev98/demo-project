@@ -34,10 +34,10 @@ jobs:
           fetch-depth: 0
 
       - name: Run Lint
-        uses: npm lint
+        run: npm lint
 
       - name: Run tests
-        uses: npm test
+        run: npm test
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -46,15 +46,15 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        uses: npm clean-install
+        run: npm clean-install
 
         # https://github.blog/changelog/2022-07-26-a-new-npm-audit-signatures-command-to-verify-npm-package-integrity/
       - name: Verify the integrity of packages
-        uses: npm audit signatures
+        run: npm audit signatures
 
       # Run semantic-release only when tests succeed or all jobs succeed
       - name: Run semantic-release
         run: npx semantic-release
 
       - name: Deploy project
-        uses: echo 'Deploying project . . .'
+        run: echo 'Deploying project . . .'
