@@ -29,6 +29,7 @@ This is a readme file
 - <https://chat.openai.com/share/688d7553-78f8-4710-9198-dcd84ae4a7cf>
 - <https://chat.openai.com/share/04900fc2-8798-41d7-9346-5491fdb7bf8d>
 - <https://chat.openai.com/share/9d0a4caf-5718-4940-b44e-5bc87e450c94>
+- <https://github.com/semantic-release/semantic-release/blob/v22.0.12/docs/recipes/ci-configurations/github-actions.md#pushing-packagejson-changes-to-a-master-branch>
 
 ## Commands
 
