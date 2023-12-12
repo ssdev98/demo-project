@@ -54,6 +54,8 @@ jobs:
 
       # Run semantic-release only when tests succeed or all jobs succeed
       - name: Run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx semantic-release
 
       - name: Deploy project
