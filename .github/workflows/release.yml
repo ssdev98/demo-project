@@ -47,10 +47,10 @@ jobs:
         run: npm audit signatures
 
       - name: Run Lint
-        run: npm lint
+        run: npm run lint
 
       - name: Run tests
-        run: npm test
+        run: npm run test
 
       # Run semantic-release only when tests succeed or all jobs succeed
       - name: Run semantic-release
