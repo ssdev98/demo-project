@@ -33,17 +33,17 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Run Lint
-        run: npm lint
-
-      - name: Run tests
-        run: npm test
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
           cache: 'npm'
+
+      - name: Run Lint
+        run: npm lint
+
+      - name: Run tests
+        run: npm test
 
       - name: Install dependencies
         run: npm clean-install
