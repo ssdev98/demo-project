@@ -3,5 +3,13 @@
 		"main"
 	],
 	"private": true,
-	"successComment": false
+	"successComment": false,
+	"plugins": [
+		[
+			"@semantic-release/npm",
+			{
+				"npmPublish": false
+			}
+		]
+	]
 }
