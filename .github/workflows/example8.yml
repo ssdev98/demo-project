@@ -3,16 +3,16 @@ name: Example8
 on:
   push:
     branches: main
-    #paths:
-    #- 'src/**'
+    paths:
+      - 'src/**'
   pull_request:
     branches: main
-    #paths:
-    #- 'src/**'
+    paths:
+      - 'src/**'
 
 jobs:
   job1:
-    name: some title here #TODO: Change title
+    name: This is job1
     runs-on: ubuntu-latest
 
     steps:
@@ -32,7 +32,7 @@ jobs:
           path: build/artifact.apk #TODO: Path of the artifact
 
   job2:
-    name: some title here #TODO: Change title
+    name: This is job2
     runs-on: ubuntu-latest
     needs: job1
 

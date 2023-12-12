@@ -1,0 +1,7 @@
+{
+	"branches": [
+		"main",
+		"develop"
+	],
+	"nomPublish": false
+}

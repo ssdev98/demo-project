@@ -1,15 +1,23 @@
 {
-  "name": "demo-project",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5"
-  }
+	"name": "demo-project",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"homepage": "https://github.com/SoufianeSaadouni/demo-project",
+	"repository": "https://github.com/SoufianeSaadouni/demo-project",
+	"author": "Soufiane Saadouni",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"test": "echo 'Testing the project. . .'",
+		"lint": "echo 'Linting the project. . .'"
+	},
+	"devDependencies": {
+		"@semantic-release/changelog": "^6.0.3",
+		"@semantic-release/git": "^10.0.1",
+		"semantic-release": "^22.0.12",
+		"typescript": "^5.0.2",
+		"vite": "^4.4.5"
+	}
 }

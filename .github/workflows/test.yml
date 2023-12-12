@@ -3,12 +3,16 @@ name: Tests
 on:
   push:
     branches: [main]
+    paths:
+      - 'src/**' # ** means wildcard to match child folders or files
   pull_request:
     branches: [main]
+    paths:
+      - 'src/**' # ** means wildcard to match child folders or files
   #pull_request:
-    #branches: '*' #all branches
+  #branches: '*' #all branches
   #pull_request:
-    #branches: [develop] # develop or main etc
+  #branches: [develop] # develop or main etc
 
 permissions: read-all
 
@@ -19,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest #or windows-latest
 
     steps:
-      - uses: actions/checkout@v4 
+      - uses: actions/checkout@v4
         with:
           sparse-checkout: . # To fetch root files
       - run: cat README.md # Print content of the file

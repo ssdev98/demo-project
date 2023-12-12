@@ -3,8 +3,12 @@ name: Build
 on:
   push:
     branches: [main]
+    paths: 
+      - 'src/**' # ** means wildcard to match child folders or files
   pull_request:
     branches: '*' #all branches
+    paths: 
+      - 'src/**' # ** means wildcard to match child folders or files
   #pull_request:
   #branches: [develop] # develop or main etc
 
