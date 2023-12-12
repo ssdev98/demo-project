@@ -22,6 +22,7 @@ This is a readme file
 - <https://github.com/actions/setup-node>
 - <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens>
 - <https://stackoverflow.com/a/68002777>
+- <https://semantic-release.gitbook.io/>
 
 ## Playlist
 

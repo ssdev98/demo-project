@@ -15,15 +15,17 @@
 		{
 			"changelogFile": "CHANGELOG.md"
 		},
-		"@semantic-release/github",
-		{
-			"assets": [
-				{
-					"path": "dist",
-					"name": "some-name",
-					"label": "Build"
-				}
-			]
-		}
+		[
+			"@semantic-release/github",
+			{
+				"assets": [
+					{
+						"path": "dist",
+						"name": "some-name",
+						"label": "Build"
+					}
+				]
+			}
+		]
 	]
 }
