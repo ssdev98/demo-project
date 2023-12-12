@@ -6,31 +6,25 @@
 	"successComment": false,
 	"plugins": [
 		[
+			"@semantic-release/npm",
+			{
+				"npmPublish": false
+			},
 			"@semantic-release/commit-analyzer",
 			"@semantic-release/release-notes-generator",
-			[
-				"@semantic-release/npm",
-				{
-					"npmPublish": false
-				}
-			],
-			[
-				"@semantic-release/changelog",
-				{
-					"changelogFile": "CHANGELOG.md"
-				}
-			],
-			[
-				"@semantic-release/git",
-				{
-					"assets": [
-						{
-							"path": "dist",
-							"label": "Build"
-						}
-					]
-				}
-			]
+			"@semantic-release/changelog",
+			{
+				"changelogFile": "CHANGELOG.md"
+			},
+			"@semantic-release/github",
+			{
+				"assets": [
+					{
+						"path": "dist",
+						"label": "Build"
+					}
+				]
+			}
 		]
 	]
 }

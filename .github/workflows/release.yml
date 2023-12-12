@@ -55,7 +55,6 @@ jobs:
 
       - name: Build project
         run: npm run build
-        
 
         # Run semantic-release only when tests succeed or all jobs succeed
       - name: Run semantic-release
