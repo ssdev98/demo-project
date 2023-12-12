@@ -17,12 +17,13 @@ jobs:
   release:
     runs-on: ubuntu-latest
 
-    permissions: write-all
+    permissions:
+      write-all
       #contents: write
       #issues: write
       #pull-requests: write
       #id-token: write
-      
+
       #strategy:
       #matrix:
       #node-version: [21.x, 20.x, 18.x, 16.x]
@@ -52,7 +53,11 @@ jobs:
       - name: Run tests
         run: npm run test
 
-      # Run semantic-release only when tests succeed or all jobs succeed
+      - name: Build project
+        run: npm run build
+        
+
+        # Run semantic-release only when tests succeed or all jobs succeed
       - name: Run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
