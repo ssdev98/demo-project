@@ -5,6 +5,14 @@
 	"private": true,
 	"successComment": false,
 	"plugins": [
+		"@semantic-release/commit-analyzer",
+		"@semantic-release/release-notes-generator",
+		[
+			"@semantic-release/changelog",
+			{
+				"changelogFile": "CHANGELOG.md"
+			}
+		],
 		[
 			"@semantic-release/github",
 			{
@@ -30,14 +38,6 @@
 						"label": "HTML file"
 					}
 				]
-			}
-		],
-		"@semantic-release/commit-analyzer",
-		"@semantic-release/release-notes-generator",
-		[
-			"@semantic-release/changelog",
-			{
-				"changelogFile": "CHANGELOG.md"
 			}
 		],
 		[
