@@ -38,8 +38,8 @@ This is a readme file
 - <https://github.com/semantic-release/gitlab/issues/158>
 - <https://semantic-release.gitbook.io/semantic-release/support/faq#can-i-use-semantic-release-to-publish-non-javascript-packages>
 - <https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes>
-- <https://github.com/semantic-release/git#gpg-signature>
 - <https://github.com/semantic-release/git#environment-variables>
+- <https://github.com/semantic-release/git#gpg-signature>
 
 ## Commands
 
