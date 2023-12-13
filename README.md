@@ -31,12 +31,17 @@ This is a readme file
 - <https://chat.openai.com/share/04900fc2-8798-41d7-9346-5491fdb7bf8d>
 - <https://chat.openai.com/share/9d0a4caf-5718-4940-b44e-5bc87e450c94>
 - <https://github.com/semantic-release/semantic-release/blob/v22.0.12/docs/recipes/ci-configurations/github-actions.md#pushing-packagejson-changes-to-a-master-branch>
+- <https://semantic-release.gitbook.io/semantic-release/usage/plugins>
+- <https://github.com/semantic-release/gitlab/issues/158>
+- <https://semantic-release.gitbook.io/semantic-release/support/faq#can-i-use-semantic-release-to-publish-non-javascript-packages>
+- <https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes>
 
 ## Commands
 
 - npm install --save-dev semantic-release
 - npm install @semantic-release/git @semantic-release/changelog -D
 
+TODO 
 `
 {
  "branches": [
