@@ -1,6 +1,8 @@
 
 # demo-project
 
+[![Release](https://github.com/SoufianeSaadouni/demo-project/actions/workflows/release.yml/badge.svg)](https://github.com/SoufianeSaadouni/demo-project/actions/workflows/release.yml)
+
 [![Example8](https://github.com/SoufianeSaadouni/demo-project/actions/workflows/example8.yml/badge.svg)](https://github.com/SoufianeSaadouni/demo-project/actions/workflows/example8.yml)
 
 [![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
@@ -26,6 +28,7 @@ This is a readme file
 
 ## Playlist
 
+- <https://kyan.com/news/using-semantic-release-and-github-actions-to-build-releases>
 - <https://www.javatpoint.com/devops>
 - <https://chat.openai.com/share/688d7553-78f8-4710-9198-dcd84ae4a7cf>
 - <https://chat.openai.com/share/04900fc2-8798-41d7-9346-5491fdb7bf8d>
@@ -40,36 +43,3 @@ This is a readme file
 
 - npm install --save-dev semantic-release
 - npm install @semantic-release/git @semantic-release/changelog -D
-
-TODO 
-`
-{
- "branches": [
-  "main"
- ],
- "private": true,
- "successComment": false,
- "plugins": [
-
-
-  
-
-
-
-  
-  [
-   "@semantic-release/git",
-   {
-    "assets": [
-     "CHANGELOG.md"
-    ]
-   }
-  ]
-
-
-
-  ],
-
- ]
-}
-`
