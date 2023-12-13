@@ -2,6 +2,8 @@
 	"branches": [
 		"main"
 	],
+	"private": true,
+	"successComment": false,
 	"plugins": [
 		[
 			"@semantic-release/github",
