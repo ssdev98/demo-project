@@ -19,11 +19,12 @@ jobs:
     if: github.repository == 'SoufianeSaadouni/demo-project'
     runs-on: ubuntu-latest
 
-    permissions: write-all
-      #contents: write
-      #issues: write
-      #pull-requests: write
-      #id-token: write
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
+
       #strategy:
       #matrix:
       #node-version: [21.x, 20.x, 18.x, 16.x]
@@ -37,11 +38,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 'lts/*'
-          cache: 'npm'
+          cache: npm
+          node-version: lts/*
 
       - name: Install dependencies
-        run: npm clean-install
+        # https://docs.npmjs.com/cli/v10/commands/npm-ci
+        run: npm ci # or npm clean-install
 
         # https://github.blog/changelog/2022-07-26-a-new-npm-audit-signatures-command-to-verify-npm-package-integrity/
       - name: Verify the integrity of packages
