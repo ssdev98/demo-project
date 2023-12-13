@@ -19,13 +19,11 @@ jobs:
     if: github.repository == 'SoufianeSaadouni/demo-project'
     runs-on: ubuntu-latest
 
-    permissions:
-      write-all
+    permissions: write-all
       #contents: write
       #issues: write
       #pull-requests: write
       #id-token: write
-
       #strategy:
       #matrix:
       #node-version: [21.x, 20.x, 18.x, 16.x]
