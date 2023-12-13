@@ -65,6 +65,8 @@ jobs:
         env:
           GIT_AUTHOR_NAME: Soufiane Saadouni
           GIT_AUTHOR_EMAIL: soufiane_dev@outlook.com
+          GIT_COMMITTER_NAME: Soufiane Saadouni
+          GIT_COMMITTER_EMAIL: soufiane_dev@outlook.com
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Deploy project
