@@ -2,8 +2,6 @@
 	"branches": [
 		"main"
 	],
-	"private": true,
-	"successComment": false,
 	"plugins": [
 		"@semantic-release/commit-analyzer",
 		"@semantic-release/release-notes-generator",
