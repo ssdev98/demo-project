@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/SoufianeSaadouni/demo-project/compare/v1.16.0...v1.17.0) (2023-12-13)
+
+
+### Features
+
+* update release and add package ([4b6105d](https://github.com/SoufianeSaadouni/demo-project/commit/4b6105d962a11cdb6928a20b22cca8e2200427f1))
+
 # [1.16.0](https://github.com/SoufianeSaadouni/demo-project/compare/v1.15.0...v1.16.0) (2023-12-13)
 
 
