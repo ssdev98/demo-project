@@ -51,18 +51,38 @@ TODO
  "successComment": false,
  "plugins": [
 
-[
-   "@semantic-release/changelog",
-   {
-    "changelogFile": "CHANGELOG.md"
-   }
-  ],
+
   [
-   "@semantic-release/npm",
+   "@semantic-release/github",
    {
-    "npmPublish": false
+    "assets": [
+     {
+      "path": "dist/index.html",
+      "label": "HTML file"
+     },
+     {
+      "path": "dist/assets/typescript-f6ead1af.svg",
+      "label": "SVG file"
+     },
+     {
+      "path": "dist/assets/index-3443e464.css",
+      "label": "CSS file"
+     },
+     {
+      "path": "dist/assets/index-aa676a50.js",
+      "label": "JAVASCRIPT file"
+     },
+     {
+      "path": "dist/index.html",
+      "label": "HTML file"
+     }
+    ]
    }
   ],
+
+
+
+  
   [
    "@semantic-release/git",
    {
