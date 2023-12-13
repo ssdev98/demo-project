@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/SoufianeSaadouni/demo-project/compare/v1.18.0...v1.19.0) (2023-12-13)
+
+
+### Features
+
+* update release 2 ([3fe053b](https://github.com/SoufianeSaadouni/demo-project/commit/3fe053b2873ecd0f23aa450679352ba14850f170))
+
 # [1.18.0](https://github.com/SoufianeSaadouni/demo-project/compare/v1.17.0...v1.18.0) (2023-12-13)
 
 
