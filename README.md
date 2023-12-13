@@ -50,19 +50,7 @@ TODO
  "private": true,
  "successComment": false,
  "plugins": [
-  "@semantic-release/commit-analyzer",
-  [
-   "@semantic-release/npm",
-   {
-    "npmPublish": false
-   }
-  ],
-  [
-   "@semantic-release/changelog",
-   {
-    "changelogFile": "CHANGELOG.md"
-   }
-  ],
+  
   [
    "@semantic-release/git",
    {
