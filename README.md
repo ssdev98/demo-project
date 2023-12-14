@@ -40,6 +40,8 @@ This is a readme file
 - <https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes>
 - <https://github.com/semantic-release/git#environment-variables>
 - <https://github.com/semantic-release/git#gpg-signature>
+- <https://bard.google.com/chat/6183d0778e241237>
+- <https://linuxhint.com/export-import-keys-with-gpg/>
 
 ## Commands
 

@@ -11,7 +11,8 @@
 		"build": "tsc && vite build",
 		"preview": "vite preview",
 		"test": "echo 'Testing the project. . .'",
-		"lint": "echo 'Linting the project. . .'"
+		"lint": "echo 'Linting the project. . .'",
+		"release": "semantic-release"
 	},
 	"devDependencies": {
 		"@semantic-release/changelog": "^6.0.3",
