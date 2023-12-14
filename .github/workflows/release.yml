@@ -68,7 +68,7 @@ jobs:
           PASSPHRASE: ${{ secrets.PASSPHRASE }}
       - name: Import private key
         run: |
-          echo $GPG_PRIVATE_KEY | gpg --batch --yes --passphrase $PASSPHRASE --import
+          echo "$GPG_PRIVATE_KEY" | gpg --batch --yes --passphrase $PASSPHRASE --import
 
         env:
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
