@@ -59,13 +59,16 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Install GPG
-        run: sudo apt-get install -y gnupg
+        # No need to install because it is already installed
+        #- name: Install GPG
+        #run: sudo apt-get install -y gnupg
 
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
       - name: Import private key
-        run: echo $GPG_PRIVATE_KEY | base64 --decode | gpg --import
+        run: |
+          sudo apt-get install ca-certificates
+          echo $GPG_PRIVATE_KEY | base64 --decode | gpg --import
 
         env:
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
