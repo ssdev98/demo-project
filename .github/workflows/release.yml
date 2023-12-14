@@ -68,7 +68,8 @@ jobs:
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
       - name: Import private key
         run: |
-          echo -e "$GPG_PRIVATE_KEY" | base64 --decode | gpg --batch --yes --passphrase $GPG_PASSPHRASE --import
+          echo -n "$GPG_PRIVATE_KEY" | base64 --decode | gpg --batch --yes --passphrase $GPG_PASSPHRASE --import
+          echo "encoded $GPG_PRIVATE_KEY" | base64 --decode
           echo "allow-loopback-pinentry" >> ~/.gnupg/gpg.conf
           echo "use-agent" >> ~/.gnupg/gpg.conf
 
