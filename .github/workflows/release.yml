@@ -63,23 +63,23 @@ jobs:
         #- name: Install GPG
         #run: sudo apt-get install -y gnupg
 
+      - name: Import private key
+        run: |
+          echo "encoded $GPG_PRIVATE_KEY" | base64 --decode
+          echo -n "$GPG_PRIVATE_KEY" | base64 --decode | gpg --batch --yes --passphrase "$GPG_PASSPHRASE" --import
+          echo "allow-loopback-pinentry" >> ~/.gnupg/gpg.conf
+          echo "use-agent" >> ~/.gnupg/gpg.conf
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-      - name: Import private key
-        run: |
-          echo -n "$GPG_PRIVATE_KEY" | base64 --decode | gpg --batch --yes --passphrase $GPG_PASSPHRASE --import
-          echo "encoded $GPG_PRIVATE_KEY" | base64 --decode
-          echo "allow-loopback-pinentry" >> ~/.gnupg/gpg.conf
-          echo "use-agent" >> ~/.gnupg/gpg.conf
 
-        env:
-          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
       - name: Setup git with GP
         run: |
           git config --global user.signingkey $GPG_KEY_ID
           git config --global commit.gpgsign true
           git config --global tag.gpgsign true
+        env:
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
 
         # Run semantic-release only when tests succeed or all jobs succeed
       - name: Run semantic-release
