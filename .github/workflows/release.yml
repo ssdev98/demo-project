@@ -70,7 +70,7 @@ jobs:
           echo "$GPG_PRIVATE_KEY" | gpg --batch --yes --passphrase "$GPG_PASSPHRASE" --import
           echo "allow-loopback-pinentry" >> ~/.gnupg/gpg.conf
           echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
-          echo '/usr/bin/gpg --batch --no-tty --pinentry-mode loopback --passphrase "$GPG_PASSPHRASE" "$@"' > /tmp/gpg_and_passphrase && chmod +x /tmp/gpg_and_passphrase
+          echo "/usr/bin/gpg --batch --no-tty --pinentry-mode loopback --passphrase \"$GPG_PASSPHRASE\" \"\$@\"" > /tmp/gpg_and_passphrase && chmod +x /tmp/gpg_and_passphrase
           cat /tmp/gpg_and_passphrase
         #echo "$GPG_PRIVATE_KEY" > private.key
         #echo -n "$GPG_PASSPHRASE" | gpg --batch --yes --passphrase-fd 0 --import private.key
