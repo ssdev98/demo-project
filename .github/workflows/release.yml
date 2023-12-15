@@ -70,10 +70,13 @@ jobs:
           echo -n "$GPG_PRIVATE_KEY" | gpg --batch --yes --passphrase "$GPG_PASSPHRASE" --import
           echo "allow-loopback-pinentry" >> ~/.gnupg/gpg.conf
           echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
+          echo "allow-preset-passphrase" >> ~/.gnupg/gpg-agent.conf
           echo "use-agent" >> ~/.gnupg/gpg.conf
-          echo "$GPG_PRIVATE_KEY" > private.key
-          echo -n "$GPG_PASSPHRASE" | gpg --batch --yes --passphrase-fd 0 --import private.key 
-#echo "allow-preset-passphrase" >> ~/.gnupg/gpg-agent.conf
+
+#echo "$GPG_PRIVATE_KEY" > private.key
+#echo -n "$GPG_PASSPHRASE" | gpg --batch --yes --passphrase-fd 0 --import private.key 
+#
+
 #echo "$GPG_PASSPHRASE" | /usr/lib/gnupg/gpg-preset-passphrase --preset $GPG_KEY_ID
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
