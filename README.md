@@ -43,6 +43,7 @@ This is a readme file
 - <https://bard.google.com/chat/6183d0778e241237>
 - <https://linuxhint.com/export-import-keys-with-gpg/>
 - <https://github.com/semantic-release/git/issues/175#issuecomment-561833773>
+- <https://stackoverflow.com/questions/38384957/prevent-git-from-asking-for-the-gnupg-password-during-signing-a-commit>
 
 ## Commands
 

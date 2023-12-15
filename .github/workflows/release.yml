@@ -71,17 +71,18 @@ jobs:
           echo "use-agent" >> ~/.gnupg/gpg.conf
           echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
           echo "allow-loopback-pinentry" >> ~/.gnupg/gpg.conf
-          echo "$GPG_PASSPHRASE" | gpg --batch --yes --passphrase -fd 0 --import --homedir ~/.gnupg
+          echo "$GPG_PASSPHRASE" | gpg-preset-passphrase --preset $GPG_KEY_ID
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
 
       - name: Configure git with GPG
         run: |
           git config --global user.signingkey $GPG_KEY_ID
           git config --global commit.gpgsign true
           git config --global tag.gpgsign true
-          git config --global gpg.program xxxxxxxxxxxx
+#git config --global gpg.program xxxxxxxxxxxx          
         env:
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
 
