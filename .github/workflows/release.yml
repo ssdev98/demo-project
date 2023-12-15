@@ -67,8 +67,8 @@ jobs:
         # https://github.com/semantic-release/git/issues/175#issuecomment-561833773
       - name: Import private key
         run: |
-          echo -n "$GPG_PRIVATE_KEY" | gpg --batch --yes --passphrase "$GPG_PASSPHRASE" --import
-          echo 'gpg2 --passphrase $GPG_PASSPHRASE --batch --no-tty "$@"' > /tmp/gpg_and_passphrase && chmod +x /tmp/gpg_and_passphrase
+          echo "$GPG_PRIVATE_KEY" | gpg --batch --yes --passphrase "$GPG_PASSPHRASE" --import
+          echo 'gpg --passphrase $GPG_PASSPHRASE --batch --no-tty "$@"' > /tmp/gpg_and_passphrase && chmod +x /tmp/gpg_and_passphrase
 
         #echo "$GPG_PRIVATE_KEY" > private.key
         #echo -n "$GPG_PASSPHRASE" | gpg --batch --yes --passphrase-fd 0 --import private.key
