@@ -71,12 +71,13 @@ jobs:
         # https://github.com/semantic-release/git/issues/175#issuecomment-561833773
       - name: Import private key
         run: |
-          echo -n "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --yes --passphrase "${{ secrets.GPG_PASSPHRASE }}" --import
+          echo -n "$GPG_PRIVATE_KEY" | gpg --batch --yes --passphrase "$GPG_PASSPHRASE" --import
           echo "allow-loopback-pinentry" >> ~/.gnupg/gpg.conf
           echo "use-agent" >> ~/.gnupg/gpg.conf
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+          GPG_TTY: /dev/stdin
 
       - name: Configure git with GPG
         run: |
