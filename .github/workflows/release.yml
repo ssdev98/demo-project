@@ -72,12 +72,12 @@ jobs:
           echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
           echo "allow-preset-passphrase" >> ~/.gnupg/gpg-agent.conf
           echo "use-agent" >> ~/.gnupg/gpg.conf
-
+          echo "$GPG_PASSPHRASE" | /usr/lib/gnupg/gpg-preset-passphrase --preset $GPG_KEY_ID
 #echo "$GPG_PRIVATE_KEY" > private.key
 #echo -n "$GPG_PASSPHRASE" | gpg --batch --yes --passphrase-fd 0 --import private.key 
 #
 
-#echo "$GPG_PASSPHRASE" | /usr/lib/gnupg/gpg-preset-passphrase --preset $GPG_KEY_ID
+#
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
@@ -87,6 +87,7 @@ jobs:
         run: |
           git config --global user.signingkey $GPG_KEY_ID
           git config --global commit.gpgsign true
+          git config --global gpg.use-agent true
           git config --global tag.gpgsign true
 #git config --global gpg.program xxxxxxxxxxxx          
         env:
