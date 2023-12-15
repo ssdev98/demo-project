@@ -71,10 +71,10 @@ jobs:
         # https://github.com/semantic-release/git/issues/175#issuecomment-561833773
       - name: Import private key
         run: |
-          echo -n "$GPG_PRIVATE_KEY" | gpg --batch --yes --passphrase "$GPG_PASSPHRASE" --import
-          sudo apt install -y ca-certificates
           echo "allow-loopback-pinentry" >> ~/.gnupg/gpg.conf
           echo "use-agent" >> ~/.gnupg/gpg.conf
+          sudo apt install -y ca-certificates
+          echo -n "$GPG_PRIVATE_KEY" | gpg --batch --yes --passphrase "$GPG_PASSPHRASE" --import
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
