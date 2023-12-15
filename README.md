@@ -44,6 +44,7 @@ This is a readme file
 - <https://linuxhint.com/export-import-keys-with-gpg/>
 - <https://github.com/semantic-release/git/issues/175#issuecomment-561833773>
 - <https://stackoverflow.com/questions/38384957/prevent-git-from-asking-for-the-gnupg-password-during-signing-a-commit>
+- <https://unix.stackexchange.com/questions/512173/gpg-gpg-preset-passphrase-installation>
 
 ## Commands
 
